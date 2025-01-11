@@ -1,0 +1,44 @@
+{
+  "name": "data-processor",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "projectType": "application",
+  "sourceRoot": "apps/data-processor/src",
+  "targets": {
+    "serve": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "python -m uvicorn src.main:app --reload",
+        "cwd": "apps/data-processor"
+      }
+    },
+    "init-db": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "python -m src.scripts.init_db",
+        "cwd": "apps/data-processor"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "python -m pytest",
+        "cwd": "apps/data-processor"
+      }
+    },
+    "lint": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "python -m flake8 src",
+        "cwd": "apps/data-processor"
+      }
+    },
+    "type-check": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "python -m mypy src",
+        "cwd": "apps/data-processor"
+      }
+    }
+  },
+  "tags": ["python", "api"]
+} 
