@@ -4,6 +4,7 @@ A FastAPI-based service for AI model inference and data processing, integrated w
 
 ## Project Structure
 
+``` cmd
 data-processor/
 ├── src/
 │ ├── api/ # API Layer
@@ -42,3 +43,4 @@ data-processor/
 ├── requirements.txt # Python dependencies
 ├── project.json # Nx project configuration
 └── README.md # Project documentation
+```
